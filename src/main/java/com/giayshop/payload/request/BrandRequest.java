@@ -1,8 +1,9 @@
 package com.giayshop.payload.request;
 
-public class BrandResquest {
+public class BrandRequest {
 	private String name;
 	private String code;
+	
 	public String getName() {
 		return name;
 	}
@@ -15,4 +16,5 @@ public class BrandResquest {
 	public void setCode(String code) {
 		this.code = code;
 	}
+	
 }

@@ -4,13 +4,19 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = "file")
 public class FileStorageProperties {
-	private String uploadDir;
-
-	public String getUploadDir() {
-		return uploadDir;
-	}
+	private String productImages;
+	private String brandImages;
 	
-	public void setUploadDir(String uploadDir) {
-		this.uploadDir = uploadDir;
+	public String getProductImages() {
+		return productImages;
+	}
+	public void setProductImages(String productImages) {
+		this.productImages = productImages;
+	}
+	public String getBrandImages() {
+		return brandImages;
+	}
+	public void setBrandImages(String brandImages) {
+		this.brandImages = brandImages;
 	}
 }

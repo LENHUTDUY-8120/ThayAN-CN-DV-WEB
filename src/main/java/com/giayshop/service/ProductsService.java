@@ -10,6 +10,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -47,7 +50,7 @@ public class ProductsService {
 	
 	@Autowired
     public ProductsService(FileStorageProperties fileStorageProperties) {
-        this.fileStorageLocation = Paths.get(fileStorageProperties.getUploadDir())
+        this.fileStorageLocation = Paths.get(fileStorageProperties.getProductImages())
                 .toAbsolutePath().normalize();
 
         try {
@@ -114,5 +117,16 @@ public class ProductsService {
 		productsResponse.setImages(product.getListImage().stream()
 				.map(image -> image.getFileName()).collect(Collectors.toList()));
 		return productsResponse;
+	}
+	
+	public Page<Products> findProducts(String title, int page, int size) {
+		Pageable paging = PageRequest.of(page, size);
+		Page<Products> pageP;
+		if (title==null) {
+			pageP = productsRepo.findAll(paging);
+		}else {
+			pageP = productsRepo.findByTitleContaining(title, paging);
+		}
+		return pageP;
 	}
 }

@@ -1,9 +1,8 @@
 package com.giayshop.payload.response;
 
 import java.util.Date;
-import java.util.List;
 
-public class ProductsResponse {
+public class ProductsAdminResponse {
 
 	private Long id;
 	private String title;
@@ -11,11 +10,11 @@ public class ProductsResponse {
 	private int price;
 	private int quantity;
 	private String describes;
-	private String brandCode;
+	private String brandName;
 	private String gioiTinh;
-	private String colorCode;
-	private String chatLieuCode;
-	private List<String> images;
+	private String colorName;
+	private String chatLieuName;
+	private String images;
 	private Date createdDate;
 	private Date modifyDate;
 	
@@ -43,17 +42,17 @@ public class ProductsResponse {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 	public String getDescribes() {
 		return describes;
 	}
 	public void setDescribes(String describes) {
 		this.describes = describes;
-	}
-	public String getBrandCode() {
-		return brandCode;
-	}
-	public void setBrandCode(String brandCode) {
-		this.brandCode = brandCode;
 	}
 	public String getGioiTinh() {
 		return gioiTinh;
@@ -61,22 +60,28 @@ public class ProductsResponse {
 	public void setGioiTinh(String gioiTinh) {
 		this.gioiTinh = gioiTinh;
 	}
-	public String getColorCode() {
-		return colorCode;
+	public String getBrandName() {
+		return brandName;
 	}
-	public void setColorCode(String colorCode) {
-		this.colorCode = colorCode;
+	public void setBrandName(String brandName) {
+		this.brandName = brandName;
 	}
-	public String getChatLieuCode() {
-		return chatLieuCode;
+	public String getColorName() {
+		return colorName;
 	}
-	public void setChatLieuCode(String chatLieuCode) {
-		this.chatLieuCode = chatLieuCode;
+	public void setColorName(String colorName) {
+		this.colorName = colorName;
 	}
-	public List<String> getImages() {
+	public String getChatLieuName() {
+		return chatLieuName;
+	}
+	public void setChatLieuName(String chatLieuName) {
+		this.chatLieuName = chatLieuName;
+	}
+	public String getImages() {
 		return images;
 	}
-	public void setImages(List<String> images) {
+	public void setImages(String images) {
 		this.images = images;
 	}
 	public Date getCreatedDate() {
@@ -90,11 +95,5 @@ public class ProductsResponse {
 	}
 	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
-	}
-	public int getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
 	}
 }

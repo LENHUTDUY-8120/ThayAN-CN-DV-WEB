@@ -12,6 +12,8 @@ public class Brand extends BaseEntity{
 	private String name;
 	@Column
 	private String code;
+	@Column
+	private String imagePath;
 	
 	public String getName() {
 		return name;
@@ -24,5 +26,11 @@ public class Brand extends BaseEntity{
 	}
 	public void setCode(String code) {
 		this.code = code;
+	}
+	public String getImagePath() {
+		return imagePath;
+	}
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
 	}
 }

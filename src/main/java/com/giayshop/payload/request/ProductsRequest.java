@@ -3,7 +3,8 @@ package com.giayshop.payload.request;
 public class ProductsRequest {
 	private String title;
 	private String productCode;
-	private float price;
+	private int price;
+	private int quantity;
 	private String describes;
 	private String brandCode;
 	private String gioiTinh;
@@ -21,10 +22,10 @@ public class ProductsRequest {
 	public void setProductCode(String productCode) {
 		this.productCode = productCode;
 	}
-	public float getPrice() {
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(float price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 	public String getDescribes() {
@@ -56,5 +57,11 @@ public class ProductsRequest {
 	}
 	public void setChatLieuCode(String chatLieuCode) {
 		this.chatLieuCode = chatLieuCode;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 }

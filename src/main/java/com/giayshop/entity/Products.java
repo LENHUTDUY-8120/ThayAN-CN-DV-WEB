@@ -8,8 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -26,11 +24,15 @@ public class Products extends BaseEntity{
 	@Column
 	private String gioiTinh;
 	@Column
-	private float price;
+	private int price;
+	@Column
+	private int quantity;
 	@Column
 	private int views = 0;
 	@Column
 	private String describes;
+	@Column
+	private String status = "active";
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "brand_id", foreignKey = @ForeignKey(name = "Brand_ID_FK"))
@@ -50,12 +52,6 @@ public class Products extends BaseEntity{
 	@OneToMany(mappedBy = "product")
 	private List<Comments> comments = new ArrayList<>();
 	
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "product_store",
-				joinColumns = @JoinColumn(name = "product_id"),
-				inverseJoinColumns = @JoinColumn(name = "store_id"))
-	private List<Stores> stores = new ArrayList<>();
-	
 	@OneToOne(mappedBy = "product")
 	private OrderItem orderItem;
 	
@@ -71,11 +67,17 @@ public class Products extends BaseEntity{
 	public void setProductCode(String productCode) {
 		this.productCode = productCode;
 	}
-	public float getPrice() {
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(float price) {
+	public void setPrice(int price) {
 		this.price = price;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	public int getViews() {
 		return views;
@@ -83,17 +85,17 @@ public class Products extends BaseEntity{
 	public void setViews(int views) {
 		this.views = views;
 	}
-	public List<Stores> getStores() {
-		return stores;
-	}
-	public void setStores(List<Stores> stores) {
-		this.stores = stores;
-	}
 	public String getDescribes() {
 		return describes;
 	}
 	public void setDescribes(String describes) {
 		this.describes = describes;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	public Brand getBrand() {
 		return brand;

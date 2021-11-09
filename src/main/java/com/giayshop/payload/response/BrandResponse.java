@@ -4,6 +4,8 @@ public class BrandResponse {
 
 	private String name;
 	private String code;
+	private String imagePath;
+	
 	public String getName() {
 		return name;
 	}
@@ -16,5 +18,10 @@ public class BrandResponse {
 	public void setCode(String code) {
 		this.code = code;
 	}
-	
+	public String getImagePath() {
+		return imagePath;
+	}
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
 }
