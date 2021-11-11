@@ -16,6 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.giayshop.config.FileStorageException;
 import com.giayshop.config.FileStorageProperties;
 import com.giayshop.config.MapperUtil;
+import com.giayshop.converter.BrandConverter;
 import com.giayshop.entity.Brand;
 import com.giayshop.payload.request.BrandRequest;
 import com.giayshop.payload.response.BrandResponse;
@@ -70,7 +71,8 @@ public class BrandService {
     }
 	
 	public List<BrandResponse> getAllBrand() {
-		return MapperUtil.mapAll(brandRepo.findAll(), BrandResponse.class);
+		List<Brand> listBrand = brandRepo.findAll();
+		return BrandConverter.toListRs(listBrand);
 	}
 	
 	public BrandResponse saveBrand(String brand, MultipartFile image) {

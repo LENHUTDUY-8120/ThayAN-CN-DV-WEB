@@ -7,4 +7,5 @@ import com.giayshop.entity.Brand;
 public interface BrandRepo extends JpaRepository<Brand, Long>{
 
 	public Brand findOneByCode(String code);
+	
 }

@@ -41,7 +41,7 @@ public class ProductsApi {
 
 	@GetMapping
 	public ResponseEntity<Map<String, Object>> getProducts(@RequestParam(required = false) String title,
-			@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "8") int size) {
+			@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "6") int size) {
 		try {
 			Page<Products> pageP = productsService.findProducts(title, page, size);
 			List<ProductsAdminResponse> productAd = new ArrayList<>();

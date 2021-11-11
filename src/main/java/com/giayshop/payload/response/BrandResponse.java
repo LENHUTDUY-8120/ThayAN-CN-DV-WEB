@@ -5,6 +5,7 @@ public class BrandResponse {
 	private String name;
 	private String code;
 	private String imagePath;
+	private int totalProduct;
 	
 	public String getName() {
 		return name;
@@ -23,5 +24,11 @@ public class BrandResponse {
 	}
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
+	}
+	public int getTotalProduct() {
+		return totalProduct;
+	}
+	public void setTotalProduct(int totalProduct) {
+		this.totalProduct = totalProduct;
 	}
 }

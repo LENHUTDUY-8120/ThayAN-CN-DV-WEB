@@ -1,7 +1,11 @@
 package com.giayshop.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -14,6 +18,9 @@ public class Brand extends BaseEntity{
 	private String code;
 	@Column
 	private String imagePath;
+	
+	@OneToMany(mappedBy = "brand")
+	private List<Products> products = new ArrayList<>();
 	
 	public String getName() {
 		return name;
@@ -33,4 +40,11 @@ public class Brand extends BaseEntity{
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
 	}
+	public List<Products> getProducts() {
+		return products;
+	}
+	public void setProducts(List<Products> products) {
+		this.products = products;
+	}
+	
 }
