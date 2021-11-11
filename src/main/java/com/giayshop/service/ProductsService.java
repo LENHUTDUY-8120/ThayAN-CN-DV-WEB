@@ -95,6 +95,7 @@ public class ProductsService {
 		products.setTitle(productsRequest.getTitle());
 		products.setProductCode(productsRequest.getProductCode());
 		products.setPrice(productsRequest.getPrice());
+		products.setQuantity(productsRequest.getQuantity());
 		products.setDescribes(productsRequest.getDescribes());
 		products.setGioiTinh(productsRequest.getGioiTinh());
 		products.setBrand(brandRepo.findOneByCode(productsRequest.getBrandCode()));
