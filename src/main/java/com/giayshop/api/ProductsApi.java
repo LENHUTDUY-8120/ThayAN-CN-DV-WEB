@@ -42,7 +42,7 @@ public class ProductsApi {
 	@PostMapping(consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE },
 			value = "/admin/products")
 	public ProductsResponse addProduct(@RequestPart("product") String product,
-			@RequestPart("images") MultipartFile[] images) {
+			@RequestPart(value = "images") MultipartFile[] images) {
 		return productsService.saveProduct(images, product);
 	}
 
