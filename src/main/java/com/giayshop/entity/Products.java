@@ -10,7 +10,6 @@ import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -52,8 +51,8 @@ public class Products extends BaseEntity{
 	@OneToMany(mappedBy = "product")
 	private List<Comments> comments = new ArrayList<>();
 	
-	@OneToOne(mappedBy = "product")
-	private OrderItem orderItem;
+	@OneToMany(mappedBy = "product")
+	private List<OrderItem> orderItems = new ArrayList<>();
 	
 	public String getTitle() {
 		return title;
@@ -109,11 +108,11 @@ public class Products extends BaseEntity{
 	public void setGioiTinh(String gioiTinh) {
 		this.gioiTinh = gioiTinh;
 	}
-	public OrderItem getOrderItem() {
-		return orderItem;
+	public List<OrderItem> getOrderItems() {
+		return orderItems;
 	}
-	public void setOrderItem(OrderItem orderItem) {
-		this.orderItem = orderItem;
+	public void setOrderItems(List<OrderItem> orderItems) {
+		this.orderItems = orderItems;
 	}
 	public Color getColor() {
 		return color;

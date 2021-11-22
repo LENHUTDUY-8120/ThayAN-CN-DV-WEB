@@ -30,6 +30,6 @@ public class BrandApi {
 	@PostMapping
 	public BrandResponse addNewBrand(@RequestPart String brand,
 									 @RequestPart MultipartFile image) {
-		return brandService.saveBrand(brand, image);
+	return brandService.saveBrand(brand, image);
 	}
 }

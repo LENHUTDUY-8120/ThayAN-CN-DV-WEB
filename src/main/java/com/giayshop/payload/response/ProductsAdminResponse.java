@@ -17,6 +17,7 @@ public class ProductsAdminResponse {
 	private String images;
 	private Date createdDate;
 	private Date modifyDate;
+	private int views;
 	
 	public Long getId() {
 		return id;
@@ -95,5 +96,11 @@ public class ProductsAdminResponse {
 	}
 	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
+	}
+	public int getViews() {
+		return views;
+	}
+	public void setViews(int views) {
+		this.views = views;
 	}
 }

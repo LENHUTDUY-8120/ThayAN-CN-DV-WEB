@@ -14,11 +14,9 @@ import com.giayshop.config.FileStorageProperties;
 import com.giayshop.entity.Brand;
 import com.giayshop.entity.ChatLieu;
 import com.giayshop.entity.Color;
-import com.giayshop.entity.Products;
 import com.giayshop.repository.BrandRepo;
 import com.giayshop.repository.ChatLieuRepo;
 import com.giayshop.repository.ColorRepo;
-import com.giayshop.repository.ProductsRepo;
 
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 @EnableConfigurationProperties({
@@ -32,8 +30,6 @@ public class Application {
 	private ColorRepo colorRepo;
 	@Autowired
 	private BrandRepo brandRepo;
-	@Autowired
-	private ProductsRepo productsRepo;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
@@ -44,7 +40,6 @@ public class Application {
 		List<ChatLieu> listCL = chatLieuRepo.findAll();
 		List<Color> listColor = colorRepo.findAll();
 		List<Brand> listBrand = brandRepo.findAll();
-		List<Products> listProduct = productsRepo.findAll();
 		
 		if (listColor.isEmpty()) {
 			Color color1 = new Color();

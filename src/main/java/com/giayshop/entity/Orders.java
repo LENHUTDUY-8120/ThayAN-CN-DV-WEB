@@ -1,7 +1,6 @@
 package com.giayshop.entity;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -17,7 +16,7 @@ import javax.persistence.Table;
 public class Orders extends BaseEntity{
 
 	@Column
-	private String fulname;
+	private String fullname;
 	@Column
 	private String phoneNumber;
 	@Column
@@ -27,23 +26,13 @@ public class Orders extends BaseEntity{
 	@Column
 	private String note;
 	@Column
-	private Date date;
-	@Column
 	private int total;
 	@Column
 	@Enumerated(EnumType.STRING)
-	private OrderState orderSate;
+	private OrderState orderState;
 	
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<OrderItem> listOrderDetails = new ArrayList<>();
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
+	private List<OrderItem> listOrderItems = new ArrayList<>();
 
 	public int getTotal() {
 		return total;
@@ -53,28 +42,28 @@ public class Orders extends BaseEntity{
 		this.total = total;
 	}
 
-	public OrderState getOrderSate() {
-		return orderSate;
+	public String getOrderState() {
+		return orderState.getValue();
 	}
 
-	public void setOrderSate(OrderState orderSate) {
-		this.orderSate = orderSate;
+	public void setOrderState(OrderState orderState) {
+		this.orderState = orderState;
 	}
 
-	public List<OrderItem> getListOrderDetails() {
-		return listOrderDetails;
+	public List<OrderItem> getListOrderItems() {
+		return listOrderItems;
 	}
 
-	public void setListOrderDetails(List<OrderItem> listOrderDetails) {
-		this.listOrderDetails = listOrderDetails;
+	public void setListOrderItems(List<OrderItem> listOrderItems) {
+		this.listOrderItems = listOrderItems;
 	}
 
-	public String getFulname() {
-		return fulname;
+	public String getFullname() {
+		return fullname;
 	}
 
-	public void setFulname(String fulname) {
-		this.fulname = fulname;
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
 	}
 
 	public String getPhoneNumber() {

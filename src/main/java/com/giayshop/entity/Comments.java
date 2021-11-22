@@ -23,13 +23,9 @@ public class Comments extends BaseEntity{
 	@Column
 	private String phoneNumber;
 	@Column
-	private String image;
-	@Column
 	private String content;
 	@Column
-	private int numLike;
-	@Column
-	private int numUnlike;
+	private int rate;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "product_id", foreignKey = @ForeignKey(name = "Product_ID_FK"))
@@ -62,14 +58,6 @@ public class Comments extends BaseEntity{
 		this.phoneNumber = phoneNumber;
 	}
 
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
 	public String getContent() {
 		return content;
 	}
@@ -78,28 +66,28 @@ public class Comments extends BaseEntity{
 		this.content = content;
 	}
 
-	public int getNumLike() {
-		return numLike;
-	}
-
-	public void setNumLike(int numLike) {
-		this.numLike = numLike;
-	}
-
-	public int getNumUnlike() {
-		return numUnlike;
-	}
-
-	public void setNumUnlike(int numUnlike) {
-		this.numUnlike = numUnlike;
-	}
-
 	public List<Subcomment> getSubcomments() {
 		return subcomments;
 	}
 
 	public void setSubcomments(List<Subcomment> subcomments) {
 		this.subcomments = subcomments;
+	}
+
+	public int getRate() {
+		return rate;
+	}
+
+	public void setRate(int rate) {
+		this.rate = rate;
+	}
+
+	public Products getProduct() {
+		return product;
+	}
+
+	public void setProduct(Products product) {
+		this.product = product;
 	}
 	
 }

@@ -8,5 +8,11 @@ import com.giayshop.entity.Products;
 
 public interface ProductsRepo extends JpaRepository<Products, Long>{
 
-	public Page<Products> findByTitleContaining(String title, Pageable pageable);
+	public Page<Products> findByTitleContainingAndStatus(String title, Pageable pageable,String stt);
+	
+	public Page<Products> findByStatus(String status,Pageable pageable);
+	
+	public Products findByIdAndStatus(Long id, String stt);
+	
+	public Long countByStatus(String stt);
 }
