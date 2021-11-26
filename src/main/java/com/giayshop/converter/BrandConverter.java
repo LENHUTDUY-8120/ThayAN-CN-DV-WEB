@@ -12,6 +12,7 @@ public class BrandConverter {
 		BrandResponse brandResponse = new BrandResponse();
 		brandResponse.setName(brand.getName());
 		brandResponse.setCode(brand.getCode());
+		brandResponse.setImagePath(brand.getImagePath());
 		brandResponse.setTotalProduct(brand.getProducts().size());
 		return brandResponse;
 	}
