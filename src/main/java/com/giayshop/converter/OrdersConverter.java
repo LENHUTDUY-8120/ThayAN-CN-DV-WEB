@@ -27,7 +27,7 @@ public class OrdersConverter {
 		item.setName(orderItem.getProduct().getTitle());
 		item.setImage(orderItem.getProduct().getListImage().get(0).getFileName());
 		item.setPrice(orderItem.getPrice());
-		item.setQuantity(orderItem.getQuantiy());
+		item.setQuantity(orderItem.getQuantity());
 		return item;
 	}
 	

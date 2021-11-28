@@ -20,7 +20,7 @@ public class OrderItem extends BaseEntity{
 	private Products product;
 	
 	private int price;
-	private int quantiy;
+	private int quantity;
 	public Orders getOrder() {
 		return order;
 	}
@@ -39,11 +39,10 @@ public class OrderItem extends BaseEntity{
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public int getQuantiy() {
-		return quantiy;
+	public int getQuantity() {
+		return quantity;
 	}
-	public void setQuantiy(int quantiy) {
-		this.quantiy = quantiy;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
-	
 }
