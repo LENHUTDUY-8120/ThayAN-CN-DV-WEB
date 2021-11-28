@@ -48,7 +48,7 @@ public class OrderService {
 		for (ItemRequest itemRequest : items) {
 			OrderItem orderItem = new OrderItem();
 			orderItem.setPrice(itemRequest.getPrice());
-			orderItem.setQuantiy(itemRequest.getQuantity());
+			orderItem.setQuantity(itemRequest.getQuantity());
 			orderItem.setProduct(productsRepo.findById(itemRequest.getProductId()).orElseThrow());
 			orderItem.setOrder(order1);
 			orderItemRepo.save(orderItem);
