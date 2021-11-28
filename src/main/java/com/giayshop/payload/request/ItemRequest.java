@@ -4,7 +4,7 @@ public class ItemRequest {
 
 	private Long productId;
 	private int price;
-	private int quantiy;
+	private int quantity;
 	
 	public Long getProductId() {
 		return productId;
@@ -18,11 +18,10 @@ public class ItemRequest {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public int getQuantiy() {
-		return quantiy;
+	public int getQuantity() {
+		return quantity;
 	}
-	public void setQuantiy(int quantiy) {
-		this.quantiy = quantiy;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
-	
 }

@@ -48,7 +48,7 @@ public class ProductsApi {
 
 	@GetMapping(value = "/admin/products")
 	public ResponseEntity<Map<String, Object>> getAllProducts(@RequestParam(required = false) String title,
-			@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "6") int size,
+			@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "15") int size,
 			@RequestParam(defaultValue = "active") String status) {
 		try {
 			Page<Products> pageP = productsService.findProducts(title, page, size,status);
@@ -88,7 +88,7 @@ public class ProductsApi {
 	
 	@GetMapping(value = "/products")
 	public ResponseEntity<Map<String, Object>> getAllProductsCus(@RequestParam(required = false) String title,
-			@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size) {
+			@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "8") int size) {
 		try {
 			Page<Products> pageP = productsService.getAllProducts(title, page, size);
 			List<ProductsCusResponse> productcus = new ArrayList<>();
